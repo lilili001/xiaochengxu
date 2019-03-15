@@ -1,0 +1,25 @@
+<!--pages/posts/posts.wxml 新闻列表-->
+<import src="post-detail/post-detail.wxml"/>
+<view>
+<swiper 
+indicator-dots="{{indicatorDots}}" 
+indicator-color='{{indicatorColor}}'
+indicator-active-color='{{indicatorActiveColor}}'
+autoplay='{{autoplay}}'
+current-current-item-id='3'
+circular='{{circular}}'
+previous-margin='{{previousMargin}}'
+display-multiple-items='1'
+bindchange='bindchange'
+bindtransition='bindtransition'
+bindanimationfinish='bindanimationfinish'
+>
+  <swiper-item wx:for="{{imgUrls}}" wx:key='{{index}}' wx:for-index='index1' wx:for-item='item1' item-id='{{index}}'>
+    <image src="{{item1}}"></image>
+  </swiper-item>
+</swiper>
+
+<block wx:for="{{postList}}" wx:key="index" wx:for-item="post">
+  <template is="postDetail" data="{{post}}"/>
+</block>
+</view>

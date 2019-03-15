@@ -22,4 +22,42 @@ mp.weixin.qq.com
 
 ## 4.1 rpx
 rpx 是响应式单位
-一张图片 如果在 小程序里面用 使用rpx单位即可, 或者用0.5倍的 px(iphone6上)
+一张图片 如果在 小程序里面用 使用rpx单位即可, 或者用0.5倍的 px(iphone6上) 10px = 20rpx
+
+# 5.0 小程序头部配置
+app.json中的window属性
+
+# 6.0 wx:for
+核心代码就是 wx:for，对应一个数组。
+而 wx:for-index 指明后面如果要用数组索引的话，用什么名字，如果名字是 index，则可省略，直接使用。
+而 wx:for-item 指明后面如果要用数组索引对应的项的话，用什么名字，如果名字是 item，则可省略，直接使用。
+
+# 7.0 数据传递
+小程序中不能操作dom,数据绑定和vue类似
+```angular2html
+this.setData(data)
+this.setData({options})
+```
+
+# 8.0 wx:if
+```angular2html
+wx:if="{{flag}}"
+```
+
+# 9.0 block
+可用于循环
+
+#10.0 navigateTo 和  redirectTo
+navigateTo 调用的是onHide,redirectTo调用的是unUnload
+wx的 api 一般都有 success, fail, complete 回调
+
+# 11.0 事件绑定
+bind:tap = "fn"  bind:longTap = 'fn'
+
+catch:tap = 'fn1' 阻止冒泡, 用于外层
+
+```angular2html
+<view catch:tap="fn1">
+    <text bind:tap="fn"></text>
+</view>
+```

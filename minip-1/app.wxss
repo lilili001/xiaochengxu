@@ -1,0 +1,4 @@
+/**公用的css**/
+text{
+  font-family: Microsoft Yahei;
+}
